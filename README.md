@@ -24,7 +24,10 @@ The current method is the Python Wheel's are loaded onto the rootfs, and have to
 - pillow >= 8.0.4 
 - opencv-python >= 4.5.4
 
-To build an SD card image. 
+Add the yocto layer to the sources folder 
+
+> $ cd ~/var-fslc-yocto/sources \ 
+> $ git clone https://github.com/rzw2/meta-chronoptics-coral \ 
 > $ cd ~/var-fslc-yocto/build_xwayland \ 
 > $ echo 'BBLAYERS += "${BSPDIR}/sources/meta-chronoptics-coral"' >> conf/bblayers.conf 
 
@@ -36,13 +39,21 @@ Add the extra dependencies
 > $ echo 'IMAGE_INSTALL_append = "python3-pip"' >> conf/local.conf \
 > $ echo 'IMAGE_INSTALL_append = "python3-opencv"' >> conf/local.conf 
 
-Now can build the SD Card 
+Now build the image
 > $ bitbake fsl-image-gui 
 
-Once built create the SD Card. 
-Change from the default DTB to the USB Host DTB. 
+Flash the SD card 
+> sudo umount /dev/sdX* \
+> $ zcat tmp/deploy/images/kea-c-rev-b/fsl-image-gui-kea-c-rev-b.wic.gz | sudo dd of=/dev/sdX bs=1M conv=fsync 
 
-Boot the camera. 
+Where X is the SD drive, for example /dev/sda* 
+
+Change from the default DTB to the USB Host DTB. 
+> $ cd /media/USERNAME/root/boot \ 
+> $ sudo rm imx8mq-var-dart-dt8mcustomboard.dtb \
+> $ sudo ln -s kea-c-rev-b-host.dtb imx8mq-var-dart-dt8mcustomboard.dtb
+
+Put the SD card into the camera and power the camera to boot. 
 
 Log into the camera, either SSH, or use the USB Debug UART, or the HDMI screen with a mouse and keyboard. 
 
