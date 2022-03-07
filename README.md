@@ -70,9 +70,6 @@ Now download an example, we use ( https://github.com/google-coral/examples-camer
 > $ sh download_models.sh \
 > $ cd opencv 
 
-For far faster display and update upgrade numpy and opencv, this takes the display speed from 5fps to over 30fps. 
-> $ pip3 install opencv-python 
-
 To run from the terminal you have to select the display to use
 > $ DISPLAY=:0 python3 detect.py --camera_idx 1 
 
