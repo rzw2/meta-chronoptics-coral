@@ -41,12 +41,12 @@ Add the yocto layer to the sources folder
 > $ echo 'BBLAYERS += "${BSPDIR}/sources/meta-chronoptics-coral"' >> conf/bblayers.conf 
 
 Add the extra dependencies 
-> $ echo 'IMAGE_INSTALL_append = "libedgetpu"' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "git"' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "pycoral"' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "tflite-runtime"' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "python3-pip"' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "python3-opencv"' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "libedgetpu "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "git "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "pycoral "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "tflite-runtime "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "python3-pip "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "python3-opencv "' >> conf/local.conf 
 
 Now build the image
 > $ bitbake fsl-image-gui 
