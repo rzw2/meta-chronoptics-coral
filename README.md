@@ -24,11 +24,20 @@ The current method is the Python Wheel's are loaded onto the rootfs, and have to
 - pillow >= 8.0.4 
 - opencv-python >= 4.5.4
 
+Add the clang layer to the sources folder, and checkout the dunfull version 
+
+> $ cd ~/var-fslc-yocto/sources \
+> $ git clone https://github.com/kraj/meta-clang.git \
+> $ cd meta-clang \
+> $ git checkout dunfull \
+> > $ cd ~/var-fslc-yocto/build_xwayland \
+> $ echo 'BBLAYERS += "${BSPDIR}/sources/meta-clang"' >> conf/bblayers.conf 
+
 Add the yocto layer to the sources folder 
 
-> $ cd ~/var-fslc-yocto/sources \ 
-> $ git clone https://github.com/rzw2/meta-chronoptics-coral \ 
-> $ cd ~/var-fslc-yocto/build_xwayland \ 
+> $ cd ~/var-fslc-yocto/sources \
+> $ git clone https://github.com/rzw2/meta-chronoptics-coral \
+> $ cd ~/var-fslc-yocto/build_xwayland \
 > $ echo 'BBLAYERS += "${BSPDIR}/sources/meta-chronoptics-coral"' >> conf/bblayers.conf 
 
 Add the extra dependencies 
