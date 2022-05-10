@@ -58,7 +58,7 @@ Flash the SD card
 Where X is the SD drive, for example /dev/sda* 
 
 Change from the default DTB to the USB Host DTB. 
-> $ cd /media/USERNAME/root/boot \ 
+> $ cd /media/USERNAME/root/boot \
 > $ sudo rm imx8mq-var-dart-dt8mcustomboard.dtb \
 > $ sudo ln -s kea-c-rev-b-host.dtb imx8mq-var-dart-dt8mcustomboard.dtb
 
