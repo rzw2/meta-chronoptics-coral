@@ -89,21 +89,15 @@ Alternativily you can cross compile and copy across to the SD card. These instru
 https://coral.ai/docs/notes/build-coral/
 
 ## TensorFlow Lite Examples 
-There are examples of using TensorFlow here
-https://www.tensorflow.org/lite/examples
+There are examples of using TensorFlow on Kea have been forked from tensorflow are here
+https://github.com/rzw2/examples
 The examples that can run on Raspberry Pi should be able to run on Kea as well, however have to change the OpenCV dependency because the version of OpenCV installed with pip depends on qt which fails to launch the OpenCV image viewer. 
 
-So for https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi 
+So for https://github.com/rzw2/examples/tree/master/lite/examples/object_detection/raspberry_pi 
 Follow the instructions to clone the repository. 
-
-Remove these two lines from the requirements.txt file 
-> numpy>=1.20.0  # To ensure compatibility with OpenCV on Raspberry Pi. \
-> opencv-python~=4.5.3.56
 
 Now run the setup.sh script and run the example using 
 > DISPLAY=:0 python3 detect.py --enableEdgeTPU --cameraId 1
-
-
 
 ## Examples
 
