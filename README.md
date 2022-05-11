@@ -46,7 +46,8 @@ Add the extra dependencies
 > $ echo 'IMAGE_INSTALL_append = "pycoral "' >> conf/local.conf \
 > $ echo 'IMAGE_INSTALL_append = "tflite-runtime "' >> conf/local.conf \
 > $ echo 'IMAGE_INSTALL_append = "python3-pip "' >> conf/local.conf \
-> $ echo 'IMAGE_INSTALL_append = "python3-opencv "' >> conf/local.conf 
+> $ echo 'IMAGE_INSTALL_append = "python3-opencv "' >> conf/local.conf \
+> $ echo 'IMAGE_INSTALL_append = "portaudio-v19 "' >> conf/local.conf 
 
 Now build the image
 > $ bitbake fsl-image-gui 
