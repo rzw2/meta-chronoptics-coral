@@ -71,7 +71,8 @@ Log into the camera, either SSH, or use the USB Debug UART, or the HDMI screen w
 In the terminal install the python wheel packages
 > $ cd /home/root/coral \
 > $ python3 -m pip install tflite_runtime-2.5.0.post1-cp38-cp38-linux_aarch64.whl \
-> $ python3 -m pip install pycoral-2.0.0-cp38-cp38-linux_aarch64.whl
+> $ python3 -m pip install pycoral-2.0.0-cp38-cp38-linux_aarch64.whl \
+> $ ldconfig 
 
 Now download an example, we use ( https://github.com/google-coral/examples-camera ). 
 
